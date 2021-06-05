@@ -1,0 +1,85 @@
+ <%- include("../partials/header") %>
+ <%- include("../partials/navbar") %>
+<div class="container-fluid" id="pay">
+    <div class="row" id="paybody">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+    <form class="validated-form mt-3" action="/payment_gateway/paytm" method="post" novalidate> 
+        <h6 class="display-6">Add Your Payment Info</h6>
+        <div class="mb-3">
+          <!-- <label for="name" class="form-label">Name</label> -->
+          <input type="text" class="form-control" id="name" placeholder="Enter your name" name="name" value=""required>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+        </div>
+        <div class="mb-3">
+          <!-- <label for="email" class="form-label">Email</label> -->
+          <input type="text" class="form-control" id="email" placeholder="Enter your email" name="email" value=""required>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+        </div>
+        <div class="mb-3">
+          <!-- <label for="phone" class="form-label">Phone</label> -->
+          <input type="text" class="form-control" id="phone" placeholder="Phone No." name="phone" value=""required>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+        </div>
+       
+        <div class="mb-3 ">
+            <!-- <label for="price" class="form-label">Price</label> -->
+            
+            <input type="text" class="form-control" id="price" placeholder="Enter price" name="amount" value="" required>
+            <div class="valid-feedback">
+                Looks good!
+              </div>
+          </div>
+          
+        
+        <button type="submit" class="btn btn-success mb-3">Submit</button>
+      </form>
+
+</div>
+</div>
+
+
+
+
+<!-- <div class="row my-5">
+  <div class="col-md-4 offset-md-4">
+    <div class="card">
+      <div class="card-body">
+        <form class="" action="/payment_gateway/paytm" method="post">
+          <div class="form-group">
+            <label for="">Name: </label>
+            <input class="form-control" type="text" name="name" value="">
+          </div>
+          <div class="form-group">
+            <label for="">Email: </label>
+            <input class="form-control" type="text" name="email" value="">
+          </div>
+          <div class="form-group">
+            <label for="">Phone: </label>
+            <input class="form-control" type="text" name="phone" value="">
+          </div>
+            <div class="form-group">
+            <label for="">Amount: </label>
+            <input class="form-control" type="text" name="amount" value="">
+          </div>
+          <div class="form-group">
+            <button class="btn form-control btn-primary">Pay Now</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+
+
+
+</div>
+ <%- include("../partials/footer") %>
+
