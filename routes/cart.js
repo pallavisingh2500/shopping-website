@@ -10,7 +10,7 @@ router.get('/user/:userId/cart',isLoggedIn,async(req,res)=>{
     try{
         const user=await User.findById(req.params.userId).populate('cart');
         
-        res.render('cart/showcart',{userCart:user.cart});
+        res.render('cart/showCart',{userCart:user.cart});
     }
     catch(e){
         req.flash('error','Unable to Add this product');
