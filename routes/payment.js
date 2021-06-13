@@ -1,3 +1,7 @@
+if(process.env.NODE_ENV != 'production' ){
+  require('dotenv').config();
+}
+console.log(process.env);
 const express = require("express");
 const https = require("https");
 const router = express.Router();
@@ -35,10 +39,10 @@ router.post("/payment_gateway/paytm", [parseUrl, parseJson],(req, res) => {
     params['ORDER_ID'] = 'TEST_'  + new Date().getTime();
     params['CUST_ID'] = paymentDetails.customerId;
     params['TXN_AMOUNT'] = paymentDetails.amount;
-    params['CALLBACK_URL'] = 'http://localhost:3000/callback';
+    params['CALLBACK_URL'] = process.env.BASE_URL + 'callback';
     params['EMAIL'] = paymentDetails.customerEmail;
     params['MOBILE_NO'] = paymentDetails.customerPhone;
-
+   console.log(params);
 
     checksum_lib.genchecksum(params,'iw&iOoUUxI&eu7P5' , function (err, checksum) {
         // var txn_url = "https://securegw-stage.paytm.in/theia/processTransaction"; // for staging
@@ -63,7 +67,7 @@ router.post("/callback", (req, res) => {
     res.render("payment/paymentSuccess");
   }
   else{
-    res.render("payment/paymentFail.ejs");
+    res.render("payment/paymentFail");
   }
      
 });
